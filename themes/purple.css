@@ -1,0 +1,677 @@
+/* Purple Theme - Purple accents, violet shades */
+.theme-purple {
+    --theme-bg-primary: #1a0b2e;
+    --theme-bg-secondary: #2d1b47;
+    --theme-bg-tertiary: #3d2b5f;
+    --theme-bg-card: rgba(45, 27, 71, 0.8);
+    --theme-bg-glass: rgba(139, 92, 246, 0.1);
+    
+    --theme-text-primary: #f3f4f6;
+    --theme-text-secondary: #d1d5db;
+    --theme-text-muted: #9ca3af;
+    --theme-text-accent: #a855f7;
+    
+    --theme-accent-primary: #a855f7;
+    --theme-accent-secondary: #ec4899;
+    --theme-accent-tertiary: #8b5cf6;
+    
+    --theme-border: #4c1d95;
+    --theme-border-light: #5b21b6;
+    
+    --theme-shadow: 0 8px 32px rgba(168, 85, 247, 0.2);
+    --theme-shadow-lg: 0 20px 60px rgba(168, 85, 247, 0.3);
+    
+    background: linear-gradient(135deg, #1a0b2e 0%, #2d1b47 50%, #1a0b2e 100%);
+    color: var(--theme-text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Classic Template - Purple Theme */
+.theme-purple .template-classic {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: var(--theme-bg-card);
+    border: 1px solid var(--theme-border);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: var(--theme-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-purple .template-classic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary), var(--theme-accent-tertiary));
+}
+
+.theme-purple .classic-header {
+    border-bottom: 2px solid var(--theme-accent-primary);
+    padding-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.theme-purple .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.theme-purple .profile-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--theme-accent-primary);
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+    filter: brightness(1.1);
+}
+
+.theme-purple .profile-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--theme-accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-bg-secondary);
+    font-size: 3.5rem;
+    color: var(--theme-accent-primary);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.theme-purple .name {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--theme-text-primary);
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.01em;
+}
+
+.theme-purple .title {
+    font-size: 1.6rem;
+    color: var(--theme-accent-tertiary);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.theme-purple .classic-main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.theme-purple .classic-main h3 {
+    font-size: 1.8rem;
+    color: var(--theme-accent-primary);
+    border-left: 5px solid var(--theme-accent-primary);
+    padding-left: 1.25rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.theme-purple .classic-main h3::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    border-radius: 0 3px 3px 0;
+}
+
+.theme-purple .bio {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--theme-text-secondary);
+    text-align: justify;
+}
+
+.theme-purple .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.theme-purple .skill-tag {
+    background: linear-gradient(135deg, var(--theme-bg-tertiary), var(--theme-bg-secondary));
+    color: var(--theme-text-primary);
+    padding: 1rem 1.75rem;
+    border-radius: 30px;
+    border: 2px solid var(--theme-accent-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-purple .skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.theme-purple .skill-tag:hover::before {
+    left: 0;
+}
+
+.theme-purple .skill-tag:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+.theme-purple .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.theme-purple .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2rem;
+    background: var(--theme-bg-secondary);
+    color: var(--theme-text-secondary);
+    text-decoration: none;
+    border-radius: 15px;
+    border: 2px solid var(--theme-border);
+    transition: all 0.4s ease;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-purple .social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.theme-purple .social-links a:hover::before {
+    left: 0;
+}
+
+.theme-purple .social-links a:hover {
+    color: white;
+    border-color: var(--theme-accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* Card Template - Purple Theme */
+.theme-purple .template-card {
+    padding: 3rem;
+    background: var(--theme-bg-primary);
+}
+
+.theme-purple .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.theme-purple .card {
+    background: var(--theme-bg-card);
+    border: 1px solid var(--theme-border);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    box-shadow: var(--theme-shadow);
+    position: relative;
+}
+
+.theme-purple .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.theme-purple .card:hover::before {
+    transform: scaleX(1);
+}
+
+.theme-purple .card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--theme-shadow-lg);
+    border-color: var(--theme-accent-primary);
+}
+
+.theme-purple .card-header {
+    background: var(--theme-bg-secondary);
+    padding: 2rem;
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.theme-purple .card-header h3 {
+    color: var(--theme-accent-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-purple .card-content {
+    padding: 2.5rem;
+}
+
+.theme-purple .profile-card .card-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Sidebar Template - Purple Theme */
+.theme-purple .template-sidebar {
+    display: flex;
+    min-height: 100vh;
+    background: var(--theme-bg-primary);
+}
+
+.theme-purple .sidebar {
+    width: 350px;
+    background: var(--theme-bg-card);
+    border-right: 1px solid var(--theme-border);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: var(--theme-shadow);
+}
+
+.theme-purple .sidebar-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100%;
+}
+
+.theme-purple .sidebar .profile-section {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    border-bottom: 2px solid var(--theme-border);
+}
+
+.theme-purple .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.theme-purple .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    color: var(--theme-text-secondary);
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-purple .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.theme-purple .nav-link:hover::before,
+.theme-purple .nav-link.active::before {
+    left: 0;
+}
+
+.theme-purple .nav-link:hover,
+.theme-purple .nav-link.active {
+    color: white;
+    transform: translateX(5px);
+}
+
+.theme-purple .sidebar-social {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.theme-purple .main-content {
+    flex: 1;
+    padding: 4rem;
+    background: var(--theme-bg-primary);
+}
+
+.theme-purple .content-section {
+    max-width: 900px;
+    margin-bottom: 5rem;
+}
+
+.theme-purple .content-section h3 {
+    font-size: 2.5rem;
+    color: var(--theme-accent-primary);
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid var(--theme-accent-primary);
+    padding-bottom: 1rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Template - Purple Theme */
+.theme-purple .template-hero {
+    min-height: 100vh;
+}
+
+.theme-purple .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, var(--theme-bg-secondary) 0%, var(--theme-bg-primary) 100%);
+}
+
+.theme-purple .hero-content {
+    z-index: 2;
+    max-width: 1000px;
+    padding: 4rem;
+}
+
+.theme-purple .hero-name {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary), var(--theme-accent-tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 50px rgba(168, 85, 247, 0.3);
+}
+
+.theme-purple .hero-title {
+    font-size: 2.5rem;
+    color: var(--theme-accent-tertiary);
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.theme-purple .hero-bio {
+    font-size: 1.5rem;
+    color: var(--theme-text-secondary);
+    margin-bottom: 4rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.theme-purple .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.theme-purple .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    opacity: 0.1;
+    animation: float 10s ease-in-out infinite;
+    filter: blur(3px);
+}
+
+.theme-purple .element-1 {
+    width: 500px;
+    height: 500px;
+    top: 10%;
+    left: 0%;
+    animation-delay: 0s;
+}
+
+.theme-purple .element-2 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    right: 5%;
+    animation-delay: 4s;
+}
+
+.theme-purple .element-3 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    left: 40%;
+    animation-delay: 8s;
+}
+
+.theme-purple .skills-section,
+.theme-purple .contact-section {
+    padding: 6rem 3rem;
+    background: var(--theme-bg-secondary);
+    border-top: 1px solid var(--theme-border);
+    position: relative;
+}
+
+.theme-purple .section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.theme-purple .section-content h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-purple .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+/* Glass Template - Purple Theme */
+.theme-purple .template-glass {
+    min-height: 100vh;
+    position: relative;
+    padding: 4rem;
+    overflow: hidden;
+    background: radial-gradient(ellipse at top, var(--theme-bg-secondary) 0%, var(--theme-bg-primary) 100%);
+}
+
+.theme-purple .glass-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.theme-purple .bg-blur-1,
+.theme-purple .bg-blur-2,
+.theme-purple .bg-blur-3 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+}
+
+.theme-purple .bg-blur-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+    top: -300px;
+    left: -300px;
+}
+
+.theme-purple .bg-blur-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, var(--theme-accent-secondary), var(--theme-accent-tertiary));
+    bottom: -200px;
+    right: -200px;
+}
+
+.theme-purple .bg-blur-3 {
+    width: 350px;
+    height: 350px;
+    background: var(--theme-accent-tertiary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.theme-purple .glass-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.theme-purple .glass-card {
+    background: rgba(45, 27, 71, 0.3);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 25px;
+    padding: 3rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-purple .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary), var(--theme-accent-tertiary));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.theme-purple .glass-card:hover::before {
+    transform: scaleX(1);
+}
+
+.theme-purple .glass-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 80px rgba(168, 85, 247, 0.3);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.theme-purple .main-card {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .theme-purple .template-sidebar {
+        flex-direction: column;
+    }
+    
+    .theme-purple .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .theme-purple .hero-name {
+        font-size: 3.5rem;
+    }
+    
+    .theme-purple .hero-title {
+        font-size: 2rem;
+    }
+    
+    .theme-purple .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .theme-purple .card-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .theme-purple .template-classic {
+        padding: 2rem;
+    }
+    
+    .theme-purple .main-content {
+        padding: 2rem;
+    }
+}

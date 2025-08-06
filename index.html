@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator - Create Your Perfect Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-magic"></i> Portfolio Generator</h1>
+                <p>Create stunning portfolios in minutes with our customizable templates</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Form Section -->
+            <section class="form-section">
+                <div class="form-container">
+                    <h2><i class="fas fa-user-edit"></i> Your Information</h2>
+                    <form id="portfolioForm" class="portfolio-form">
+                        <!-- Personal Info -->
+                        <div class="form-group">
+                            <label for="fullName">
+                                <i class="fas fa-user"></i> Full Name
+                            </label>
+                            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle">
+                                <i class="fas fa-briefcase"></i> Job Title
+                            </label>
+                            <input type="text" id="jobTitle" name="jobTitle" placeholder="Frontend Developer" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio">
+                                <i class="fas fa-quote-left"></i> About Me
+                            </label>
+                            <textarea id="bio" name="bio" placeholder="Tell us about yourself, your passion, and what you do..." rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills">
+                                <i class="fas fa-code"></i> Skills (comma-separated)
+                            </label>
+                            <input type="text" id="skills" name="skills" placeholder="JavaScript, React, Node.js, CSS, Git" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileImage">
+                                <i class="fas fa-image"></i> Profile Image URL (optional)
+                            </label>
+                            <input type="url" id="profileImage" name="profileImage" placeholder="https://example.com/your-photo.jpg">
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <h3><i class="fas fa-share-alt"></i> Social Links</h3>
+                            
+                            <div class="form-group">
+                                <label for="github">
+                                    <i class="fab fa-github"></i> GitHub
+                                </label>
+                                <input type="url" id="github" name="github" placeholder="https://github.com/yourusername">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linkedin">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </label>
+                                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourusername">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="twitter">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </label>
+                                <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/yourusername">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="portfolio">
+                                    <i class="fas fa-globe"></i> Portfolio Website
+                                </label>
+                                <input type="url" id="portfolio" name="portfolio" placeholder="https://yourwebsite.com">
+                            </div>
+                        </div>
+
+                        <!-- Template Selection -->
+                        <div class="template-selection">
+                            <h3><i class="fas fa-palette"></i> Choose Template</h3>
+                            <div class="template-grid">
+                                <div class="template-option" data-template="classic">
+                                    <div class="template-preview">
+                                        <div class="template-icon"><i class="fas fa-file-alt"></i></div>
+                                        <span class="template-name">Classic</span>
+                                    </div>
+                                </div>
+                                <div class="template-option" data-template="card">
+                                    <div class="template-preview">
+                                        <div class="template-icon"><i class="fas fa-th-large"></i></div>
+                                        <span class="template-name">Card-Based</span>
+                                    </div>
+                                </div>
+                                <div class="template-option" data-template="sidebar">
+                                    <div class="template-preview">
+                                        <div class="template-icon"><i class="fas fa-columns"></i></div>
+                                        <span class="template-name">Left Sidebar</span>
+                                    </div>
+                                </div>
+                                <div class="template-option" data-template="hero">
+                                    <div class="template-preview">
+                                        <div class="template-icon"><i class="fas fa-star"></i></div>
+                                        <span class="template-name">Centered Hero</span>
+                                    </div>
+                                </div>
+                                <div class="template-option" data-template="glass">
+                                    <div class="template-preview">
+                                        <div class="template-icon"><i class="fas fa-gem"></i></div>
+                                        <span class="template-name">Glassmorphic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Theme Selection -->
+                        <div class="theme-selection">
+                            <h3><i class="fas fa-paint-brush"></i> Choose Theme</h3>
+                            <div class="theme-grid">
+                                <div class="theme-option" data-theme="dark">
+                                    <div class="theme-preview theme-dark"></div>
+                                    <span class="theme-name">Dark</span>
+                                </div>
+                                <div class="theme-option" data-theme="light">
+                                    <div class="theme-preview theme-light"></div>
+                                    <span class="theme-name">Light</span>
+                                </div>
+                                <div class="theme-option" data-theme="purple">
+                                    <div class="theme-preview theme-purple"></div>
+                                    <span class="theme-name">Purple</span>
+                                </div>
+                                <div class="theme-option" data-theme="teal">
+                                    <div class="theme-preview theme-teal"></div>
+                                    <span class="theme-name">Teal</span>
+                                </div>
+                                <div class="theme-option" data-theme="neon">
+                                    <div class="theme-preview theme-neon"></div>
+                                    <span class="theme-name">Neon</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Generate Button -->
+                        <button type="submit" class="generate-btn">
+                            <i class="fas fa-magic"></i> Generate Portfolio
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section">
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h2><i class="fas fa-eye"></i> Live Preview</h2>
+                        <div class="preview-actions">
+                            <button id="refreshPreview" class="btn-secondary">
+                                <i class="fas fa-sync"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div id="portfolioPreview" class="portfolio-preview">
+                        <div class="placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Fill out the form and select a template to see your portfolio preview</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2024 Portfolio Generator. Create amazing portfolios with ease.</p>
+        </footer>
+    </div>
+
+    <!-- Load Template Files -->
+    <script src="templates/classic.js"></script>
+    <script src="templates/card.js"></script>
+    <script src="templates/sidebar.js"></script>
+    <script src="templates/hero.js"></script>
+    <script src="templates/glass.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
