@@ -1,11 +1,13 @@
 // Portfolio Generator - Main JavaScript functionality
 class PortfolioGenerator {
     constructor() {
+        console.log('PortfolioGenerator constructor called');
         this.selectedTemplate = 'classic';
         this.selectedTheme = 'dark';
         this.currentThemeLink = null;
         
         this.init();
+        console.log('PortfolioGenerator initialized with template:', this.selectedTemplate, 'theme:', this.selectedTheme);
     }
 
     init() {
@@ -15,12 +17,22 @@ class PortfolioGenerator {
     }
 
     bindEvents() {
+        console.log('Binding events...');
+        
         // Form submission
         const form = document.getElementById('portfolioForm');
+        if (!form) {
+            console.error('Form not found!');
+            return;
+        }
+        
         form.addEventListener('submit', (e) => {
+            console.log('Form submitted');
             e.preventDefault();
             this.generatePortfolio();
         });
+        
+        console.log('Form submission event bound');
 
         // Template selection
         const templateOptions = document.querySelectorAll('.template-option');
@@ -121,11 +133,16 @@ class PortfolioGenerator {
         const form = document.getElementById('portfolioForm');
         const requiredFields = form.querySelectorAll('[required]');
         
+        console.log('Checking required fields:', requiredFields.length);
+        
         for (let field of requiredFields) {
+            console.log(`Field ${field.name}: "${field.value}"`);
             if (!field.value.trim()) {
+                console.log(`Missing required field: ${field.name}`);
                 return false;
             }
         }
+        console.log('All required fields filled');
         return true;
     }
 
@@ -147,12 +164,18 @@ class PortfolioGenerator {
     }
 
     generatePortfolio() {
+        console.log('Generate portfolio called');
+        console.log('Selected template:', this.selectedTemplate);
+        console.log('Selected theme:', this.selectedTheme);
+        
         if (!this.hasRequiredFields()) {
+            console.log('Required fields missing');
             this.showPlaceholder();
             return;
         }
 
         const data = this.getFormData();
+        console.log('Form data:', data);
         const previewContainer = document.getElementById('portfolioPreview');
         
         // Show loading state
@@ -166,23 +189,31 @@ class PortfolioGenerator {
                 // Generate HTML based on selected template
                 switch (this.selectedTemplate) {
                     case 'classic':
+                        console.log('Generating classic template');
                         html = generateClassicTemplate(data);
                         break;
                     case 'card':
+                        console.log('Generating card template');
                         html = generateCardTemplate(data);
                         break;
                     case 'sidebar':
+                        console.log('Generating sidebar template');
                         html = generateSidebarTemplate(data);
                         break;
                     case 'hero':
+                        console.log('Generating hero template');
                         html = generateHeroTemplate(data);
                         break;
                     case 'glass':
+                        console.log('Generating glass template');
                         html = generateGlassTemplate(data);
                         break;
                     default:
+                        console.log('Using default (classic) template');
                         html = generateClassicTemplate(data);
                 }
+                
+                console.log('Generated HTML length:', html.length);
 
                 // Apply theme class and insert HTML
                 previewContainer.innerHTML = `<div class="theme-${this.selectedTheme}">${html}</div>`;
@@ -229,25 +260,7 @@ function debounce(func, wait) {
     };
 }
 
-// Helper function to generate social links (shared across templates)
-function generateSocialLinks(data) {
-    const links = [];
-    
-    if (data.github) {
-        links.push(`<a href="${data.github}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>`);
-    }
-    if (data.linkedin) {
-        links.push(`<a href="${data.linkedin}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>`);
-    }
-    if (data.twitter) {
-        links.push(`<a href="${data.twitter}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a>`);
-    }
-    if (data.portfolio) {
-        links.push(`<a href="${data.portfolio}" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Portfolio</a>`);
-    }
-    
-    return links.join('');
-}
+// generateSocialLinks function is now in utils.js
 
 // Smooth scrolling for sidebar navigation (for sidebar template)
 function initSidebarNavigation() {
@@ -277,11 +290,19 @@ function initSidebarNavigation() {
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const generator = new PortfolioGenerator();
+    console.log('DOM loaded, initializing Portfolio Generator...');
     
-    // Add some sample data for demo purposes
-    if (window.location.search.includes('demo=true')) {
-        fillSampleData();
+    try {
+        const generator = new PortfolioGenerator();
+        console.log('Portfolio Generator initialized successfully');
+        
+        // Add some sample data for demo purposes
+        if (window.location.search.includes('demo=true')) {
+            console.log('Loading demo data...');
+            fillSampleData();
+        }
+    } catch (error) {
+        console.error('Error initializing Portfolio Generator:', error);
     }
 });
 
